@@ -108,16 +108,27 @@ fun main() {
     player.show()
 
     val redPotion = Loot("Red Potion", LootType.POTION, 7.50)
-    player.inventory.add(redPotion)
+    player.getLoot(redPotion)
     val chestArmor = Loot("+3 Chest Armor", LootType.ARMOR, 80.0)
-    player.inventory.add(chestArmor)
+    player.getLoot(chestArmor)
     player.showInventory()
 
-    player.inventory.add(Loot("Ring of Protection +2", LootType.RING, 40.25))
-    player.inventory.add(Loot("Invisibility Potion", LootType.POTION, 35.95))
+    player.getLoot(Loot("Ring of Protection +2", LootType.RING, 40.25))
+    player.getLoot(Loot("Invisibility Potion", LootType.POTION, 35.95))
     player.showInventory()
 
-    println(player)
+    if (player.dropLoot(redPotion)) {
+        player.showInventory()
+    } else {
+        println("You don't have a ${redPotion.name}")
+    }
+
+    val bluePotion = Loot("Blue Potion", LootType.POTION, 6.00)
+    if (player.dropLoot(bluePotion)) {
+        player.showInventory()
+    } else {
+        println("You don't have ${bluePotion.name}")
+    }
 
     for (i in 1..10) { // final value will be included
         println("$i squared is ${i * i}")
