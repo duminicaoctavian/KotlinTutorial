@@ -210,4 +210,22 @@ fun main() {
     conan.getLoot(Loot("Health Potion", LootType.POTION, 3.0))
     conan.getLoot(Loot("Silver Ring", LootType.RING, 6.0))
     conan.showInventory()
+
+    val dracula2 = VampyreKing("Dracula2")
+    println(dracula2)
+
+    dracula2.lives = 0
+
+    do {
+        if (dracula2.dodges()) {
+            dracula2.lives += 1
+            continue
+        }
+        if (dracula2.runAway()) {
+            println("Dracula2 ran away")
+            break
+        } else {
+            dracula2.takeDamage(80)
+        }
+    } while (dracula2.lives > 0)
 }
