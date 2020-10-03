@@ -176,4 +176,8 @@ fun main() {
     println(vlad)
     vlad.takeDamage(8)
     println(vlad)
+
+    val dracula = VampyreKing("Dracula")
+    println(dracula)
+    dracula.takeDamage(12)
 }
