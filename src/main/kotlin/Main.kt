@@ -109,6 +109,35 @@ fun main() {
 
     val redPotion = Loot("Red Potion", LootType.POTION, 7.50)
     player.inventory.add(redPotion)
+    val chestArmor = Loot("+3 Chest Armor", LootType.ARMOR, 80.0)
+    player.inventory.add(chestArmor)
     player.showInventory()
+
+    player.inventory.add(Loot("Ring of Protection +2", LootType.RING, 40.25))
+    player.inventory.add(Loot("Invisibility Potion", LootType.POTION, 35.95))
+    player.showInventory()
+
     println(player)
+
+    for (i in 1..10) { // final value will be included
+        println("$i squared is ${i * i}")
+    }
+
+    for (i in 0 until 10) { // final value won't be included
+        println("$i squared is ${i * i}")
+    }
+
+    for (i in 10 downTo 0) {
+        println("$i squared is ${i * i}")
+    }
+
+    for (i in 10 downTo 0 step 2) {
+        println("$i squared is ${i * i}")
+    }
+
+    for (value in 3..100 step 3) {
+        if (value % 5 == 0) {
+            println(value)
+        }
+    }
 }
