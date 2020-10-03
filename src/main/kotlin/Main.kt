@@ -106,4 +106,9 @@ fun main() {
 
     player.weapon = Weapon("Spear", 14)
     player.show()
+
+    val redPotion = Loot("Red Potion", LootType.POTION, 7.50)
+    player.inventory.add(redPotion)
+    player.showInventory()
+    println(player)
 }
