@@ -130,6 +130,12 @@ fun main() {
         println("You don't have ${bluePotion.name}")
     }
 
+    if (player.dropLoot("Invisibility Potion")) {
+        player.showInventory()
+    } else {
+        println("You don't have an Invisibility Potion")
+    }
+
     for (i in 1..10) { // final value will be included
         println("$i squared is ${i * i}")
     }
