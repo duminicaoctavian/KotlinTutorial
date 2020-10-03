@@ -29,7 +29,7 @@ fun main() {
 
     val lives = 0
 
-    var isGameOver = (lives < 1)
+    val isGameOver = (lives < 1)
     println(isGameOver)
 
     if (isGameOver) {
@@ -42,7 +42,7 @@ fun main() {
     val age = readLine()!!.toInt()
     println("Age is $age")
 
-    var message: String
+    val message: String
 
     message = when {
         age < 18 -> {
@@ -56,13 +56,34 @@ fun main() {
         }
     }
 
-//    message = if (age < 18) {
-//        "You're too young to vote"
-//    } else if (age == 100) {
-//        "Congratulations"
-//    } else {
-//        "You can vote"
-//    }
+    val message2 = if (age < 18) {
+        "You're too young to vote"
+    } else if (age == 100) {
+        "Congratulations"
+    } else {
+        "You can vote"
+    }
 
     println(message)
+    println(message2)
+
+    val player = Player("Tim")
+    println(player.name)
+    println(player.lives)
+    println(player.level)
+    println(player.score)
+
+    player.show()
+
+    val louise = Player("Louise")
+    louise.level = 5
+    louise.show()
+
+    val louise2 = Player("Louise2", 5)
+    louise2.show()
+
+    val gr8 = Player("gr8", 4, 8)
+    val one2watch = Player("Ace", 2, 5, 1000)
+    gr8.show()
+    one2watch.show()
 }
