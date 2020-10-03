@@ -179,5 +179,18 @@ fun main() {
 
     val dracula = VampyreKing("Dracula")
     println(dracula)
-    dracula.takeDamage(12)
+
+    while (dracula.lives > 0) {
+
+        if (dracula.dodges()) {
+            continue
+        }
+
+        if (dracula.runAway()) {
+            println("Dracula ran away")
+            break
+        } else {
+            dracula.takeDamage(12)
+        }
+    }
 }
