@@ -207,9 +207,29 @@ fun main() {
     conan.getLoot(Loot("Brass Ring", LootType.RING, 1.0))
     conan.getLoot(Loot("Chain Mail", LootType.ARMOR, 4.0))
     conan.getLoot(Loot("Gold Ring", LootType.RING, 12.0))
+    conan.getLoot(Loot("Gold Ring", LootType.RING, 12.0))
+    conan.getLoot(Loot("Gold Ring", LootType.RING, 12.0))
     conan.getLoot(Loot("Health Potion", LootType.POTION, 3.0))
     conan.getLoot(Loot("Silver Ring", LootType.RING, 6.0))
+    conan.getLoot(Loot("Silver Ring", LootType.RING, 6.0))
     conan.showInventory()
+
+    conan.dropLoot("Gold Ring")
+    conan.showInventory()
+
+    conan.dropLoot("Silver Ring")
+    conan.showInventory()
+
+    val dropped = conan.dropLoot("Something not present")
+    println(dropped)
+
+    println(conan.dropLoot("Something else"))
+
+    if (conan.dropLoot("A bit of junk")) {
+        println("Junk dropped")
+    } else {
+        println("You don't have any junk")
+    }
 
     val dracula2 = VampyreKing("Dracula2")
     println(dracula2)
