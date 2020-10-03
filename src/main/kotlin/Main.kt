@@ -99,8 +99,11 @@ fun main() {
     println(gr8.weapon.damageInflicted)
 
     player.weapon = Weapon("Sword", 10)
-    println(player.weapon.name)
+    player.show()
+
+    louise.weapon = player.weapon
+    louise.show()
 
     player.weapon = Weapon("Spear", 14)
-    println(player.weapon.name)
+    player.show()
 }
